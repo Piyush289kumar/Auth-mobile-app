@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+import axios from "axios";
 import LoginPageImg from "../assets/img/mobile-med.jpg";
 function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const loginHandler = (event) => {
     event.preventDefault();
+    axios
+      .get("http://localhost:3000/")
+      .then((response) => {
+        console.log(response.data.message);
+      })
+      .catch((error) => {
+        console.error("API was not hit", error);
+      });
   };
   return (
     <>
