@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import LoginPageImg from "../assets/img/mobile-med.jpg";
-function Login() {
+function Register() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const loginHandler = (event) => {
-    event.preventDefault();
-  };
+  const registerHandler = (event) => {};
   return (
     <>
       <div className="loginContainer bg-white w-[50vh] h-[90vh] m-auto rounded-3xl overflow-hidden">
         <div className="loginPage flex flex-col justify-center">
           <img src={LoginPageImg} alt="Login Page Img" className="px-16 py-9" />
           <h1 className="font-bold text-2xl mx-auto font-custom mb-5">
-            Login Page
+            Register Page
           </h1>
           <form
-            onSubmit={loginHandler}
+            onSubmit={registerHandler}
             method="post"
             className="flex flex-col justify-center px-8"
           >
@@ -41,7 +39,7 @@ function Login() {
               type="submit"
               className="bg-violet-500 text-white mt-6 w-1/2 rounded-2xl py-2 mx-auto font-bold"
             >
-              Login
+              Register Now
             </button>
           </form>
         </div>
@@ -49,4 +47,4 @@ function Login() {
     </>
   );
 }
-export default Login;
+export default Register;
