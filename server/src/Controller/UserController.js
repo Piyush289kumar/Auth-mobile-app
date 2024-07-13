@@ -5,6 +5,8 @@ const registerUser = async (req, res) => {
 
   try {
     const newUser = await User.create({ userName });
+
+    newUser.save();
   } catch (error) {}
   res.json({
     userName,
