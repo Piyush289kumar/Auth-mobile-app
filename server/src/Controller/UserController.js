@@ -3,7 +3,7 @@ import { User } from "../Models/UserModel.js";
 const registerUser = async (req, res) => {
   const { userName } = req.body;
   try {
-    const result = await User.create({ userName });
+    const result = await User.create({ userName, password });
     res.status(201).json(result);
   } catch (error) {
     console.log(error);

@@ -7,12 +7,15 @@ function Login() {
   const loginHandler = (event) => {
     event.preventDefault();
     axios
-      .get("http://localhost:3000/")
+      .post("http://localhost:3000/register", {
+        userName,
+        password,
+      })
       .then((response) => {
-        console.log(response.data.message);
+        alert(response.data.message);
       })
       .catch((error) => {
-        console.error("API was not hit", error);
+        alert(error.message);
       });
   };
   return (
