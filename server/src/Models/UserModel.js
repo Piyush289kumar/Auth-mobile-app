@@ -9,7 +9,6 @@ const UserModel = Schema(
     },
     password: {
       type: String,
-      required: true,
       lowercase: true,
     },
   },
