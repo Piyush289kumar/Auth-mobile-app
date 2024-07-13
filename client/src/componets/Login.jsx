@@ -6,17 +6,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const loginHandler = (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:3000/register", {
-        userName,
-        password,
-      })
-      .then((response) => {
-        alert(response.data.message);
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+    
   };
   return (
     <>

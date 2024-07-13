@@ -1,9 +1,24 @@
 import React, { useState } from "react";
 import LoginPageImg from "../assets/img/mobile-med.jpg";
+import axios from "axios";
 function Register() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const registerHandler = (event) => {};
+  const registerHandler = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:3000/register", {
+        userName,
+        password,
+      })
+      .then((response) => {
+        alert("User Registered Successfully");
+      })
+      .catch((error) => {
+        alert("User Registered is not Successfully");
+      });
+  };
+
   return (
     <>
       <div className="loginContainer bg-white w-[50vh] h-[90vh] m-auto rounded-3xl overflow-hidden">
